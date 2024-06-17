@@ -6,7 +6,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">demo_url</field>
             <field name="view_mode">form</field>
-            <field name="target">new</field>
+            <!-- <field name="target">self</field> -->
     </record>
     
     <menuitem id="menu_demo_url" name="Demo URL" 
@@ -17,9 +17,9 @@
         <field name="model">demo_url</field>
         <field name="arch" type="xml">
             <form string="Demo URL">
-                <footer>
-                    <button name="btn_view_google_map" string="Google Map" type="url" class="btn-primary"/>
-                </footer>
+                <header>
+                    <button name="btn_view_google_ma" string="Google Map" type="object" class="btn-primary"/>
+                </header>
             </form>
         </field>
     </record>

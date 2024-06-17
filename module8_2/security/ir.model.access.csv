@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_module8_module8,module8.module8,model_demo_server_act,base.group_user,1,1,1,1
