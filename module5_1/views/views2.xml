@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="module5_1.demo_model_2_list">
+      <field name="name">demo_model_2 list</field>
+      <field name="model">demo_model_2</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="binary_field"/>
+          <field name="html_field"/>
+          <field name="image_field"/>
+          <field name="selection_field"/>
+          <field name="text_field"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- Form View Definition -->
+    <record id="demo_model_2_view_form" model="ir.ui.view">
+        <field name="name">demo_model_2.form</field>
+        <field name="model">demo_model_2</field>
+        <field name="arch" type="xml">
+            <form string="Advance model">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="binary_field"></field>
+                            <field name="html_field"></field>
+                        </group>
+                        <group>
+                            <field name="image_field"></field>
+                            <field name="selection_field"></field>
+                            <field name="text_field"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="demo_model_2_action">
+      <field name="name">demo_model_2 window</field>
+      <field name="res_model">demo_model_2</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- actions -->
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 2" id="module5_1.menu_2" parent="module5_1.menu_root"/>
+
+    <menuitem name="List2" id="module5_1.menu_1_list2" parent="module5_1.menu_2"
+              action="demo_model_2_action"/>
+
+  </data>
+</odoo>

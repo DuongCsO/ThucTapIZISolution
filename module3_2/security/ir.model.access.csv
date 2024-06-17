@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_module3_2_module3,module3_2.module3,model_tbl_book2,base.group_user,1,1,1,1

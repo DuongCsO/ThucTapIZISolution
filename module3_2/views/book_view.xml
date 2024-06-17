@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Tree View Definition -->
-    <record id="tbl_book_view_tree" model="ir.ui.view">
-        <field name="name">tbl_book.tree</field>
-        <field name="model">tbl_book</field>
+    <record id="tbl_book2_view_tree" model="ir.ui.view">
+        <field name="name">tbl_book2.tree</field>
+        <field name="model">tbl_book2</field>
         <field name="arch" type="xml">
             <tree string="Book">
                 <field name="name"></field>
@@ -16,9 +16,9 @@
     </record>
 
     <!-- Form View Definition -->
-    <record id="tbl_book_view_form" model="ir.ui.view">
-        <field name="name">tbl_book.form</field>
-        <field name="model">tbl_book</field>
+    <record id="tbl_book2_view_form" model="ir.ui.view">
+        <field name="name">tbl_book2.form</field>
+        <field name="model">tbl_book2</field>
         <field name="arch" type="xml">
             <form string="Book">
                 <sheet>
@@ -47,20 +47,20 @@
     <!-- Action Definition -->
     <record id="book_action" model="ir.actions.act_window">
         <field name="name">Books</field>
-        <field name="res_model">tbl_book</field>
+        <field name="res_model">tbl_book2</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('tbl_book_view_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('tbl_book_view_form')})]"/>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('tbl_book2_view_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('tbl_book2_view_form')})]"/>
     </record>
 
     <!-- Menu Definition -->
     <menuitem
-        id="tbl_book_menu"
+        id="tbl_book2_menu"
         name="Books"
         groups="base.group_user"/>
     <menuitem
         id="tbl_book_menu_1"
         name="Books"
-        parent="tbl_book_menu"
+        parent="tbl_book2_menu"
         action="book_action"
         groups="base.group_user"/>
 </odoo>

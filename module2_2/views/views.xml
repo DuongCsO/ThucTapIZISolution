@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action to Open the Wizard -->
+        <record id="action_send_email_wizard" model="ir.actions.act_window">
+            <field name="name">Send Email Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">send.email.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'default_subject': 'Hello', 'default_body': 'This is an example email.'}</field>
+        </record>
+
+        <!-- Menu Item to Trigger the Wizard -->
+        <menuitem id="menu_send_email_wizard" name="Send Email Wizard" 
+                  action="action_send_email_wizard"/>
+        
+        <!-- Wizard Form View -->
+        <record id="view_send_email_wizard_form" model="ir.ui.view">
+            <field name="name">send.email.wizard.form</field>
+            <field name="model">send.email.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Send Email">
+                    <group>
+                        <field name="recipient"/>
+                        <field name="subject"/>
+                        <field name="body" widget="html"/>
+                    </group>
+                    <footer>
+                        <button string="Send" name="send_email" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

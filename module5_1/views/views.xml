@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="module5_1.demo_model_1_list">
+      <field name="name">demo_model_1 list</field>
+      <field name="model">demo_model_1</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="bool_field"/>
+          <field name="char_field"/>
+          <field name="float_field"/>
+          <field name="integer_field"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- Form View Definition -->
+    <record id="demo_model_1_view_form" model="ir.ui.view">
+        <field name="name">demo_model_1.form</field>
+        <field name="model">demo_model_1</field>
+        <field name="arch" type="xml">
+            <form string="Basic model">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="bool_field"></field>
+                            <field name="char_field"></field>
+                        </group>
+                        <group>
+                            <field name="float_field"></field>
+                            <field name="integer_field"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="demo_model_1_action">
+      <field name="name">demo_model_1 window</field>
+      <field name="res_model">demo_model_1</field>
+      <field name="view_mode">tree,form</field>
+            <!-- <field name="view_ids" 
+            eval="[(5, 0, 0), 
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('demo_model_1.list')}), 
+                  (0, 0, {'view_mode': 'form', 'view_id': ref('demo_model_1_view_form')})]">
+                  </field> -->
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="module5" id="module5_1.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="module5_1.menu_1" parent="module5_1.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="module5_1.menu_2" parent="module5_1.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="List" id="module5_1.menu_1_list" parent="module5_1.menu_1"
+              action="demo_model_1_action"/>
+
+  </data>
+</odoo>
